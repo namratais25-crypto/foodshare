@@ -1,69 +1,64 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.js</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="hero">
+        <div className="hero-inner">
+          <div className="hero-content">
+            <span className="eyebrow">WELCOME TO FOODSHARE</span>
+            <h1>Share Food,<br /><span>Spread Hope!</span></h1>
+            <p>
+              Connect surplus food donors with community organizations.
+              Reduce food waste and help people in need.
+            </p>
+            <div className="hero-buttons">
+              <Link href="/sharefood" className="primary-btn">
+                Donate Food
+              </Link>
+              <Link href="/availablefood" className="secondary-btn">
+                Find Food
+              </Link>
+            </div>
+          </div>
+          <img
+            className="hero-image"
+            src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1000"
+            alt="Fresh food and vegetables"
+          />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="mission">
+        <h2>Our Mission</h2>
+        <p>
+          FoodShare makes surplus food easier to discover and share.
+          We aim to build a community where good food does not go to waste.
+        </p>
+      </section>
+
+      <section className="section">
+        <div className="section-title">
+          <h2>How FoodShare Works</h2>
+          <p>Three simple steps to make a difference.</p>
         </div>
-      </main>
-    </div>
+
+        <div className="steps">
+          <div className="step-card">
+            <h3>01. Donate Food</h3>
+            <p>List your surplus food with quantity and pickup details.</p>
+          </div>
+          <div className="step-card">
+            <h3>02. Reserve Food</h3>
+            <p>Community organizations can discover and reserve listings.</p>
+          </div>
+          <div className="step-card">
+            <h3>03. Collect Food</h3>
+            <p>Update the listing when the food has been collected.</p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
